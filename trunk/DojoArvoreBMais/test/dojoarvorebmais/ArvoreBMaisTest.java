@@ -369,7 +369,7 @@ public class ArvoreBMaisTest {
      * Testa inserção em árvore de altura H=2
      * Exige particionamento de uma página folha
      */
-    //@Test
+    @Test
     public void testaInsere3() throws FileNotFoundException, Exception {
         //Árvore tem um dos nós folha cheio. E é neste nó que a inserção ocorrerá
         montaArvoreH2Cheia();
@@ -420,7 +420,7 @@ public class ArvoreBMaisTest {
     /**
      * Testa inserção em árvore de altura H=2, chave do registro ja existe -- nao inserir
      */
-    //@Test
+    @Test
     public void testaInsere4() throws FileNotFoundException, Exception {
         montaArvoreH2();
 
@@ -561,11 +561,14 @@ public class ArvoreBMaisTest {
         tabDados.add(new NoFolha(3, 0, 2*NoFolha.TAMANHO, clientes));
 
         //Este nó agora é lixo. Dependendo da implementação, tem que mudar este código de teste.
-        clientes = new ArrayList<Cliente>();
-        clientes.add(new Cliente(15,"JOSE      "));
-        clientes.add(new Cliente(20,"MARIANA   "));
+        //COMENTADO PELA IMPLEMENTAÇÃO
+//        clientes = new ArrayList<Cliente>();
+//        clientes.add(new Cliente(15,"JOSE      "));
+//        clientes.add(new Cliente(20,"MARIANA   "));
+//        //Estrutura do nó folha: m, pontPai, pontProx, registros de clientes
+//        tabDados.add(new NoFolha(2, 0, 2*NoFolha.TAMANHO, clientes));
         //Estrutura do nó folha: m, pontPai, pontProx, registros de clientes
-        tabDados.add(new NoFolha(2, 0, 2*NoFolha.TAMANHO, clientes));
+        tabDados.add(new NoFolha(0, 0, 2*NoFolha.TAMANHO, null));
 
         clientes = new ArrayList<Cliente>();
         clientes.add(new Cliente(25,"RONALDO   "));
@@ -601,7 +604,7 @@ public class ArvoreBMaisTest {
         clientes.add(new Cliente(10,"JOAO      "));        
         clientes.add(new Cliente(15,"JOSE      "));
         //Estrutura do nó folha: m, pontPai, pontProx, registros de clientes
-        tabDados.add(new NoFolha(2, 0, 2*NoFolha.TAMANHO, clientes));
+        tabDados.add(new NoFolha(2, 0, 1*NoFolha.TAMANHO, clientes));
 
         //Este nó agora é lixo. Dependendo da implementação, tem que mudar este código de teste.
         clientes = new ArrayList<Cliente>();      
